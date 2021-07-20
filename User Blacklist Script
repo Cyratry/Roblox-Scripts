@@ -1,0 +1,14 @@
+banned = {"",""}
+
+function check_players()
+	wait(2)
+	for i,v in pairs(game.Players:GetChildren()) do
+		for x = 1, #banned do
+			if v.Name == banned[x] then	
+				v:Kick("You are in blacklist!")
+			end
+		end
+	end
+end
+
+game.Players.ChildAdded:connect(check_players)
