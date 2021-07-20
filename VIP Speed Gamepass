@@ -1,0 +1,11 @@
+local id = GAMEPASSIDHERE
+local m = game:GetService('MarketplaceService')
+	 
+	game.Players.ChildAdded:Connect(function(player)
+	     player.CharacterAdded:Connect(function(char)
+	          if m:UserOwnsGamePassAsync(player.UserId, id) then
+               local h = char:WaitForChild('Humanoid')
+	               h.WalkSpeed = 50
+	        end
+	  end)
+end)
