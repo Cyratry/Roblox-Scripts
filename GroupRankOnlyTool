@@ -1,0 +1,13 @@
+local tool = game.Lighting.TOOLNAMEHERE
+local groupID = GROUPIDHERE
+local rankneeded = RANKIDHERE
+
+game.Players.PlayerAdded:Connect(function(Player)
+	if Player:GetRankInGroup(groupID) >= rankneeded then
+		local tool = tool:Clone()
+		tool.Parent = Player.StarterGear
+		--tool.Parent = Player.Backpack
+	else
+		return
+	end
+end)
