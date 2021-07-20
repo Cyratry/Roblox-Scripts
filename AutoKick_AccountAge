@@ -1,0 +1,10 @@
+MinimumDays = 14
+
+game.Players.PlayerAdded:connect(function(Player)
+	if string.sub(Player.Name,1,6)=="" then
+		Player:Kick("You need an account on ROBLOX to play this game, it must be "..MinimumDays.." days old.") -- Message guests will see
+	end
+	if (Player.AccountAge) <= (MinimumDays) then
+		Player:Kick("Minimum "..MinimumDays.." ") -- Message players will see
+	end
+end)
