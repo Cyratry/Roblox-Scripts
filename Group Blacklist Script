@@ -1,9 +1,0 @@
-local groupBlackList = {groupID , groupID}
-
-game.Players.PlayerAdded:Connect(function(plr)
-	for i,v in pairs(groupBlackList) do
-		if plr:IsInGroup(v) then
-			plr:Kick("You are in a blacklisted group!")
-		end
-	end
-end)
